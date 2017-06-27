@@ -4,9 +4,12 @@ function changeHeading(ev) {
     const name = f.personName.value
     const stats = document.querySelector('#stats')
     const second = f.personSecond.value
-    
-    stats.innerHTML = name + second
+    const color = f.favoritecolor.value
+    f.style.color = color
+    //checking the font color to see if its valid
 
+    stats.innerHTML = name + "; second" + second
+    //div.innerHTML = ${name}, second ${second}
     
 }
 
