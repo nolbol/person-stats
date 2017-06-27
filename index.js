@@ -3,7 +3,11 @@ function changeHeading(ev) {
     const f = ev.target
     const name = f.personName.value
     const stats = document.querySelector('#stats')
-    stats.innerHTML = name
+    const second = f.personSecond.value
+    
+    stats.innerHTML = name + second
+
+    
 }
 
 
