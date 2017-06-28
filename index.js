@@ -6,9 +6,12 @@ function renderColor (color) {
     return colorDiv
 }
 
-function renderListItem () {
-    
+function renderListItem (list, label) {
+    const listItem = document.createElement('li')
+    listItem.textContent = `${label}${list}`
+    return listItem
 }
+
 
 function changeHeading(ev) {
     ev.preventDefault()
@@ -21,17 +24,13 @@ function changeHeading(ev) {
 
     const list = document.createElement('ul')
 
-    const nameItem = document.createElement('li')
-    nameItem.textContent = `Name: ${name}`
+    const nameItem = renderListItem(name, "Name: ")
     list.appendChild(nameItem)
-
-    const ageItem = document.createElement('li')
-    ageItem.textContent = `Age: ${age}`
+    
+    const ageItem = renderListItem(age, 'Age: ')
     list.appendChild(ageItem)
 
-    const colorItem = document.createElement('li')
-    colorItem.textContent = 'Favorite Color: '
-
+    const colorItem = renderListItem(color, 'Color: ')
     const colorDiv = renderColor(color)
     colorItem.appendChild(colorDiv)
     
